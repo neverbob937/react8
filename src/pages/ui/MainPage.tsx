@@ -23,7 +23,7 @@ function MainPage() {
     return (
         <>
             <FlexContainer>
-                <Text size={30}>фабрика котов</Text>
+                <Text size={30}>фабрика фильмов</Text>
                 <FlexContainer direction="row">
                     <MainMenu/>
                     <Panel padding={25}>

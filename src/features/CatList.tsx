@@ -9,10 +9,10 @@ function CatList() {
     
     return (
         <FlexContainer gap={20}>
-            <Text size={24}>Список котов</Text>
+            <Text size={24}>Список фильмов</Text>
             <FlexContainer>
                 {cats.length <= 0 ? ( 
-                    <Text>Котов нет :(</Text>
+                    <Text>Фильмов нету :(</Text>
                 ) : (
                     cats.map((cat) => <CatCardView key={cat.id} cat={cat} />)
                 )}

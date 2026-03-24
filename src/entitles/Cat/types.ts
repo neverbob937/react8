@@ -1,3 +1,3 @@
-export type CatColor = "черный" | "белый" | "рыжий";
+export type CatColor = "Ужас" | "Драмма" | "Комедия";
 
-export type CatBreed  = "домашняя" | "дворовая" | "лысая";
+export type CatBreed  = "Стивен" | "Джеймс" | "Агин";

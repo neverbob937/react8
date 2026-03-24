@@ -15,20 +15,17 @@ function CatCard({ cat }: ICatCardProps) {
 
     const {removeCatById} = useContext(CatsContext)
 
-    const colors: Record<CatColor,string> = {
-        "черный" : "black",
-        "белый" : "gray",
-        "рыжий" : "orange",
-    };
-    
     return (
         <Panel padding={5}>
             <FlexContainer>
-                <Text color={colors[color]}>
+                <Text>
                     #{id}: {name}
                 </Text>
                 <Text>
-                    Порода: {breed}
+                    Жанр: {color}
+                </Text>
+                <Text>
+                    Режисер: {breed}
                 </Text>
                 <Button clickAction={()=>removeCatById(cat.id)}>Удалить</Button>
             </FlexContainer>

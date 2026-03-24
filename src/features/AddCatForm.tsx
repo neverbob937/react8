@@ -18,23 +18,23 @@ function AddCatForm() {
     const[newCat, setNewCat] = useState<ICat>({
         id: Date.now(),
         name: "Без Имени",
-        color: "черный",
-        breed: "дворовая",
+        color: "Ужас",
+        breed: "Стивен",
     });
 
     return (
         <FlexContainer gap = {20}>
-            <Text size={24}>создание кошки</Text>
+            <Text size={24}>создание Фильма</Text>
             <FlexContainer alignItems="stretch">
                 <FlexContainer direction="row">
-                    <Text>Имя:</Text>
-                    <Input placeholder="Введите имя кошки" changeAction={(value) => setNewCat({ ...newCat, name: value})}/>
+                    <Text>Название:</Text>
+                    <Input placeholder="Введите название фильма" changeAction={(value) => setNewCat({ ...newCat, name: value})}/>
                 </FlexContainer>
                  <FlexContainer direction="row">
-                    <Text>Цвет:</Text>
+                    <Text>Жанр:</Text>
                     <Select 
                     options={
-                            ["белый", "черный", "рыжий"] as CatColor[]
+                            ["Ужас" , "Драмма" , "Комедия"] as CatColor[]
                         }  
                         changeAction={(value) => 
                             setNewCat({ ...newCat, color: value as CatColor})
@@ -42,10 +42,10 @@ function AddCatForm() {
                     />
                 </FlexContainer>
                  <FlexContainer direction="row">
-                    <Text>Порода:</Text>
+                    <Text>Режисер:</Text>
                     <Select 
                         options={
-                            ["дворовая", "домашняя", "лысая"] as CatBreed[]
+                            ["Стивен" , "Джеймс" , "Агин"] as CatBreed[]
                         } 
                         changeAction={(value) => 
                             setNewCat({ ...newCat, breed: value as CatBreed})
