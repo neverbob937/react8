@@ -12,8 +12,8 @@ function MainMenu() {
             <FlexContainer gap={20}>
                 <Text size={24}>меню:</Text> 
                     <FlexContainer >
-                        <Button clickAction={() => setPanel("View")}>список котов</Button>
-                        <Button clickAction={() => setPanel("AddForm")}>создать кота</Button>
+                        <Button clickAction={() => setPanel("View")}>список городов</Button>
+                        <Button clickAction={() => setPanel("AddForm")}>создать город</Button>
                     </FlexContainer>
             </FlexContainer>
         </Panel>

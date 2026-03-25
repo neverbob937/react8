@@ -1,14 +1,8 @@
-import PanelsProvider from "./app/providers/PanelsProvider";
+import PanelsProvider from "./app/providers/PanelsProvider"; // уже обернули выше
 import MainPage from "./pages/ui/MainPage";
-import Panel from "./shared/ui/Panel";
-import Text from "./shared/ui/Text";
 
 function App() {
-    return (
-        <PanelsProvider>
-        <MainPage/>
-        </PanelsProvider>                                       
-    );
+    return <MainPage />;
 }
 
 export default App;

@@ -1,10 +1,11 @@
 import { createContext } from "react";
 
 export interface IEditFormContext {
-    readonly selectedCatId: number; 
-    setCatId: (id: number) => void;
+    readonly selectedCityId: number;
+    setCityId: (id: number) => void;
 }
+
 export const EditFormContext = createContext<IEditFormContext>({
-    selectedCatId: -1,
-    setCatId: () => {}
+    selectedCityId: -1,
+    setCityId: () => {}
 });

@@ -1,37 +1,35 @@
-import { ReactNode, useContext } from "react"
-import CatCard from "../../entitles/Cat/CatCard"
-import CatList from "../../features/CatList"
-import FlexContainer from "../../shared/ui/FlexContainer"
-import Panel from "../../shared/ui/Panel"
-import Text from "../../shared/ui/Text"
-import MainMenu from "./MainMenu"
-import { PanelsContext, PanelType } from "../../app/contexts/PanelsContext"
-import AddCatForm from "../../features/AddCatForm"
-import { EditFormContext } from "../../app/contexts/EditFormContext"
-import EditFormProvider from "../../app/providers/EditFormProvider"
-import EditCatForm from "../../features/EditCatForm"
+import { ReactNode, useContext } from "react";
+import FlexContainer from "../../shared/ui/FlexContainer";
+import Text from "../../shared/ui/Text";
+import Panel from "../../shared/ui/Panel";                    // ← Добавили импорт!
+import MainMenu from "./MainMenu";
+import { PanelsContext, PanelType } from "../../app/contexts/PanelsContext";
+import CityList from "../../features/CityList";
+import AddCityForm from "../../features/AddCityForm";
+import EditCityForm from "../../features/EditCityForm";
 
 function MainPage() {
-    const {panel} = useContext(PanelsContext)
+    const { panel } = useContext(PanelsContext);
 
-    const panels : Record<PanelType, ReactNode> = 
-    {
-        "View" : <CatList/>,
-        "AddForm" : <AddCatForm/>,
-        "EditForm" : <EditCatForm/>
-    }
+    const panels: Record<PanelType, ReactNode> = {
+        "View": <CityList />,
+        "AddForm": <AddCityForm />,
+        "EditForm": <EditCityForm />,
+    };
+
     return (
-        <>
-            <FlexContainer>
-                <Text size={30}>фабрика котов</Text>
-                <FlexContainer direction="row">
-                    <MainMenu/>
-                    <Panel padding={25}>
-                        <EditFormProvider>{panels[panel]}</EditFormProvider>
-                    </Panel>
-                </FlexContainer>
+        <FlexContainer gap={20} direction="column" alignItems="flex-start">
+            <Text size={30}>Города</Text>
+
+            <FlexContainer direction="row" gap={20} alignItems="flex-start">
+                <MainMenu />
+
+                <Panel padding={25}>
+                    {panels[panel]}
+                </Panel>
             </FlexContainer>
-        </>
+        </FlexContainer>
     );
 }
+
 export default MainPage;
